@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/adham/Documents/Django/mysite/todo/templates'],#abs. path up to templates
+        'DIRS': [ os.path.abspath(os.getcwd())+'/todo/templates'],#abs. path up to templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

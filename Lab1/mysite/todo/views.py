@@ -1,3 +1,4 @@
+import os
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -15,6 +16,7 @@ myContext=[
     ]
 
 def home_view(request):
+    print(os.path.abspath(os.getcwd()))
     return render(request,'home_view.html',{'myContext':myContext})
 def add_view(request):
     return render(request,'add_view.html',{'myContext':myContext})
