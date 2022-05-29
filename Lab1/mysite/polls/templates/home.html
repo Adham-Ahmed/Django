@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>new home</h1>
+{% comment %} <h1>{{names}}</h1> {% endcomment %}
+{% for name in names %}
+<h3>{{name}}</h3>
+{% endfor %}
+{% endblock  %}

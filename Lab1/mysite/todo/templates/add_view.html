@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+  <h2>Create to do item</h2>
+  <hr>
+</div>
+<form method="post" action="/home/">
+  {% csrf_token %}
+  <div class="container">
+
+      <div id="myDIV" class="header">
+        <input type="text" id="myInput" placeholder="ID...">
+      </div>
+      
+      <div id="myDIV" class="header">
+        <input type="text" id="myInput" placeholder="Title...">
+      </div>
+
+      <div id="myDIV" class="header">
+        
+        <input type="text" id="myInput" placeholder="Description...">
+      </div>
+      <br>
+      <button class="btn btn-primary w-25" type="submit" >Save</button>
+  </div>
+</form>
+
+{% endblock content %}
+
+ 

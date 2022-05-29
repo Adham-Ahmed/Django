@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+  <h2>Create to do item</h2>
+  <hr>
+</div>
+<form method="post" action="/editFunction/{{targetTodo.id}}">
+  {% csrf_token %}
+  <div class="container">
+
+      <div id="myDIV" class="header">
+        <input type="text" id="myInput" value="{{targetTodo.id}}" Name="id">
+      </div>
+      
+      <div id="myDIV" class="header">
+        <input type="text" id="myInput" value="{{targetTodo.name}}" Name="name">
+      </div>
+
+      <div id="myDIV" class="header">
+        
+        <input type="text" id="myInput" value="{{targetTodo.description}}" Name="description">
+      </div>
+      <br>
+      <button class="btn btn-primary w-25" type="submit" >Confirm Edit</button>
+  </div>
+</form>
+
+{% comment %} 
+<div class="text-center">
+  <h2>My To Do List</h2>
+  <hr>
+</div>
+   <ul id="myUL" class="container ">
+    {% for dict in myContext %}
+    <div class="d-flex justify-content-between p-2">
+        <li>{{dict.name}} </li>
+        <div>
+           <a class="btn btn-primary" href="view/{{dict.id}}" >View</a>
+           <a class="btn btn-info" href="edit/{{dict.id}}">Edit</a>
+           <a class="btn btn-danger" href="delete/{{dict.id}}" >Delete</a>
+        </div>
+    </div>
+    {% endfor %}
+  </ul>
+  
+
+   {% endcomment %}
+
+{% endblock content %}
+
+ 
