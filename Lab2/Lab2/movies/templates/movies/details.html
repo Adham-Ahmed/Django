@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block body_content %}
+<div class="card">
+    <h5 class="card-header">{{movie.name}}</h5>
+    <div class="card-body">
+        <h5 class="card-title">Year</h5>
+        <p class="card-text">{{movie.year}}</p>
+        <h5 class="card-title">Director</h5>
+        <p class="card-text">{{movie.director}}</p>
+        <h5 class="card-title">Actors</h5>
+        <ul>
+
+            {% for actor in movie.actors.all %}
+            <li> {{ actor.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
