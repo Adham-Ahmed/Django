@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.urls import path
 
 from .views import list_all_actors, delete_actor, add_actor, edit_actor,get_actor_details
