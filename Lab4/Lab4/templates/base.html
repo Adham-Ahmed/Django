@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="{% static 'global_static/css/bootstrap.min.css' %}" >
+<script src="{% static 'global_static/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href='{% url "todo:home" %}'>Cruds</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href='{% url "todo:home" %}'>TODO <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='{% url "movies:list" %}'>MOVIES <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='{% url "actors:list" %}'>ACTORS <span class="sr-only">(current)</span></a>
+      </li>
+<!--      -->
+    </ul>
+  </div>
+</nav>
+</header>
+<body>
+{% block body_content %}
+
+{% endblock %}
+</body>
+</html>

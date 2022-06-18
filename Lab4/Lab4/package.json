@@ -1,0 +1,22 @@
+{
+  "name": "django-crud-demo",
+  "version": "1.0.0",
+  "description": "![alt text](docs/screen_shot.gif)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhammed-Ahmed-Ismail/Django-crud-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muhammed-Ahmed-Ismail/Django-crud-demo/issues"
+  },
+  "homepage": "https://github.com/Muhammed-Ahmed-Ismail/Django-crud-demo#readme"
+}

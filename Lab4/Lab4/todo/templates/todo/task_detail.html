@@ -1,0 +1,21 @@
+{% extends 'todo/base.html'%}
+
+{% block body_content %}
+<div class="content">
+    <div class="card ">
+        <div class="card-body ">
+            <div class="card-title">
+                <h2>{{ task.title }}</h2>
+            </div>
+            <div class="card-text">
+                <ul>
+                    <li> ID: {{task.id}}</li>
+                    <li>Priority: {{task.priority}}</li>
+                    <li>Done: {{task.done}}</li>
+                </ul>
+            </div>
+            <a href='{% url "todo:home" %}' class="card-link">Back to list</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
