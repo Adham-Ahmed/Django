@@ -36,9 +36,9 @@ DEFAULT_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-THIRD_PARTY_APPS = ['crispy_forms','rest_framework']
+THIRD_PARTY_APPS = ['crispy_forms','rest_framework','rest_framework.authtoken']
 
-CUSTOM_APPS = ['todo', 'actors', 'movies']
+CUSTOM_APPS = ['todo', 'actors', 'movies','accounts']
 
 INSTALLED_APPS = DEFAULT_APPS + CUSTOM_APPS+THIRD_PARTY_APPS
 
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
-        'USER': 'odoo',
+        'USER': 'postgres',
         'PASSWORD': 'odoo'
     }
 }
@@ -128,3 +128,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL='accounts.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':
+    ['rest_framework.authentication.TokenAuthentication'],}
+
+# In order to use the model we have to call it from the get_user_model function
+# A-  Usage with views:from django.contrib.auth import get_user_model
+# User=get_user_model()User.objects.all() # this will get all the users
+# B-  Usage with models:settings.AUTH_USER_MODELuser=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
