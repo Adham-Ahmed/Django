@@ -27,10 +27,14 @@ class UserSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}
         }
         
-    # def save(self, **kwargs):
-    #     user = User(
-    #         username=self.validated_data.get('username')
-    #     )
-    #     user.save()
+    def create(self, validated_data):
+        user = User(
+            username=self.validated_data.get('username'),
+            email=self.validated_data.get('email'),
+            date_of_birth=self.validated_data.get('date_of_birth'),
+            avatar=self.validated_data.get('avatar'),
+        )
+        user.set_password(validated_data['password'])
+        user.save()
 
-    #     return user
+        return user
